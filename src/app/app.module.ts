@@ -6,13 +6,17 @@ import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { HelloWorldComponent } from './components/hello-world/hello-world.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
-    HelloWorldComponent
+    HelloWorldComponent,
+    UserRegistrationComponent,
+    UserLoginComponent
    ],
   imports: [
     BrowserModule,

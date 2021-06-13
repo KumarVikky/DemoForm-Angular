@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchDataService } from '../fetch-data.service';
-import { Student } from '../student';
-import { StudentRecords } from '../student-records';
+import { Student } from 'src/app/model/student';
+import { StudentRecords } from 'src/app/model/student-records';
+import { FetchDataService } from 'src/app/service/fetch-data.service';
 
 @Component({
   selector: 'app-hello-world',
