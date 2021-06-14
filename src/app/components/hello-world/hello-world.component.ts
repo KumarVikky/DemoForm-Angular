@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from 'src/app/model/student';
 import { StudentRecords } from 'src/app/model/student-records';
+import { User } from 'src/app/model/user';
 import { FetchDataService } from 'src/app/service/fetch-data.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { FetchDataService } from 'src/app/service/fetch-data.service';
 })
 export class HelloWorldComponent implements OnInit {
 
-  student = new Student('','');
-  displayedColumns: string[] = ['rollNumber', 'studentName', 'studentAge', 'studentAddress'];
-  dataSource : StudentRecords[] = [{rollNumber: 1, studentName: 'Hydrogen', studentAge: 81, studentAddress: 'H'}];
+ user = new User
+  displayedColumns: string[] = ['studentId','rollNumber', 'studentName', 'studentAge', 'studentAddress'];
+  dataSource : StudentRecords[] = [{studentId:1,rollNumber: 1, studentName: 'Hydrogen', studentAge: 81, studentAddress: 'H'}];
 
   constructor(private _service : FetchDataService) { }
 
@@ -24,10 +24,10 @@ export class HelloWorldComponent implements OnInit {
       data => console.log('data'),
       error => console.log('error')
     );
-    console.log('test',this.student);
+    console.log('test',this.user);
   }
   postData(){
-    this._service.postDataFromRemote(this.student).subscribe(
+    this._service.postDataFromRemote(this.user).subscribe(
       data => console.log('data'),
       error => console.log('error')
     );

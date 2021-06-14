@@ -1,6 +1,7 @@
 export interface StudentRecords {
-    rollNumber:number;
-    studentName:string;
-    studentAge:number;
-    studentAddress:string;
+    studentId:Number
+    rollNumber:Number;
+    studentName:String;
+    studentAge:Number;
+    studentAddress:String;
 }
