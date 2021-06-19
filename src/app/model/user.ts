@@ -4,10 +4,11 @@ export class User {
     private _email! : String;
     private _phone! : Number;
     private _gender! : Number;
-    private _securityAnswer! : String;
     private _userName! : String;
     private _password! : String;
     private _confirmPassword! : String;
+    private _securityQuestion : String ='Please select your Sequrity Question';
+    private _securityAnswer! : String;
 
     constructor(){
     }
@@ -57,6 +58,14 @@ export class User {
 
     public set gender(theGender: Number) {
         this._gender= theGender;
+    }
+
+    public get securityQuestion() {
+        return this._securityQuestion;
+    }
+
+    public set securityQuestion(theQuestion: String) {
+        this._securityQuestion= theQuestion;
     }
 
     public get securityAnswer() {

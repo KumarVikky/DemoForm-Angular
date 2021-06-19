@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
     UserRegistrationComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    StudentDetailsComponent,
    ],
   imports: [
     BrowserModule,

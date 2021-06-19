@@ -54,7 +54,7 @@
     margin-top: 10%;
     border: none;
     border-radius: 1.5rem;
-    padding: 2%;
+    padding: 4%;
     background: #0062cc;
     color: #fff;
     font-weight: 600;
@@ -98,4 +98,30 @@
 }
 .maxl span{
     margin-right: 10px;
+}
+.msgBlock{
+    margin-bottom: 8px;
+    text-align: center;
+}
+.msgBlock .errorMsg{
+    display:inline-block;
+    margin: auto;
+    width:50%;
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color:rgb(247, 243, 245);
+    color:red;
+    text-align: center;
+    word-wrap: break-word;
+}
+.msgBlock .successMsg{
+    display:inline-block;
+    margin: auto;
+    width:50%;
+    border: 2px solid green;
+    border-radius: 4px;
+    background-color:rgb(247, 243, 245);
+    color:green;
+    text-align: center;
+    word-wrap: break-word;
 }
