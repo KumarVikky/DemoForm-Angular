@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { PageFooterComponent } from './components/page-footer/page-footer.component';
 
 @NgModule({
   declarations: [	
@@ -17,6 +19,8 @@ import { StudentDetailsComponent } from './components/student-details/student-de
     UserRegistrationComponent,
     UserLoginComponent,
     StudentDetailsComponent,
+    PageHeaderComponent,
+    PageFooterComponent,
    ],
   imports: [
     BrowserModule,

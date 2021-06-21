@@ -12,6 +12,16 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <h3 class="login-heading">Login as a Employee</h3>
                         <div class="row login-form">
+                            <ng-template [ngIf] = "showErrorMsg">
+                                <div class="msgBlock">
+                                   <b class="errorMsg">{{showMessage}}</b>
+                                </div>
+                            </ng-template>
+                            <ng-template [ngIf] = "showSuccessMsg">
+                                <div class="msgBlock">
+                                    <b class="successMsg">{{showMessage}}</b>
+                                </div>
+                            </ng-template>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="email" class="form-control" placeholder="Your Email *" value="" name="email" [(ngModel)]="user.email"/>

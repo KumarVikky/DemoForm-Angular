@@ -26,8 +26,8 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   registerUser(): void {
-    let validateResponse = this._service.validateUser(this.user);
-    let userJson : Object = {
+    let validateResponse = this._service.validateRegisterUser(this.user);
+    let userJson : any = {
       'name':this.user.getFullName(),
       'userName': this.user.userName,
       'email': this.user.email,
@@ -38,25 +38,25 @@ export class UserRegistrationComponent implements OnInit {
       'secretQuestion':this.user.securityQuestion,  
     };
     console.log('hii',userJson);
-    if(validateResponse === ''){
-      this._service.createUser(userJson).subscribe(
-      data => {
-        this.showErrorMsg = false;
-        this.showSuccessMsg = true;
-        this.showMessage = data;
-        console.log('data',data)
-      },
-      error => {
-        this.showErrorMsg = true;
-        this.showSuccessMsg = false;
-        this.showMessage = error.message;
-        console.log('error',error)
-      }
-    );
-    }else{
+    if(validateResponse.hasError){
       this.showErrorMsg = true;
       this.showSuccessMsg = false;
-      this.showMessage = validateResponse;
+      this.showMessage = validateResponse.message;
+    }else{
+      this._service.createUser(userJson).subscribe(
+        data => {
+          this.showErrorMsg = false;
+          this.showSuccessMsg = true;
+          this.showMessage = JSON.parse(data).message;
+          console.log('data',data);
+        },
+        error => {
+          this.showErrorMsg = true;
+          this.showSuccessMsg = false;
+          this.showMessage = error.message;
+          console.log('error',error);
+        }
+      );
     }
   }
 

@@ -7,6 +7,8 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UserDataService {
+
+  msgBody : any = {hasError : false, message : ''};
   
   httpOptions : Object = {
     headers: new HttpHeaders({
@@ -27,29 +29,48 @@ export class UserDataService {
     return this._http.post<any>('https://form-data-spring.herokuapp.com/user/login',user,this.httpOptions);
   }
 
-  public validateUser(user:User):String{
-    let msgBody : String = '';
+  public validateRegisterUser(user:User):any{
     if(user.firstName === '' || user.firstName === undefined){
-      msgBody = 'First Name cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'First Name cannot be blank';
     }else if(user.lastName === '' || user.lastName === undefined){
-      msgBody = 'Last Name cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Last Name cannot be blank';
     }else if(user.email === '' || user.email === undefined){
-      msgBody = 'Email Name cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Email Name cannot be blank';
     }else if(user.phone === null || user.phone === undefined){
-      msgBody = 'Phone cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Phone cannot be blank';
     }else if(user.userName === '' || user.userName === undefined){
-      msgBody = 'Email cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Email cannot be blank';
     }else if(user.password === '' || user.password === undefined){
-      msgBody = 'Password cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Password cannot be blank';
     }else if(user.confirmPassword === '' || user.confirmPassword === undefined){
-      msgBody = 'Confirm Password cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Confirm Password cannot be blank';
     }else if(user.securityQuestion === 'Please select your Sequrity Question'){
-      msgBody = 'Please select security question';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Please select security question';
     }else if(user.securityAnswer === '' || user.securityAnswer === undefined){
-      msgBody = 'Security Answer cannot be blank';
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Security Answer cannot be blank';
     }else if(user.password !== user.confirmPassword){
-      msgBody = 'Password not matched'; 
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Password not matched'; 
     }
-    return msgBody;
+    return this.msgBody;
+  }
+  public validateLoginUser(user :User):any{
+    if(user.userName === '' || user.userName === undefined){
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'User Name should not be blank';
+    }else if(user.password === '' || user.password === undefined){
+      this.msgBody.hasError = true;
+      this.msgBody.message = 'Password should not be blank';
+    }
+    return this.msgBody;
   }
 }

@@ -58,9 +58,9 @@
     background: #0062cc;
     color: #fff;
     font-weight: 600;
-    width: 30%;
+    width: 25%;
     cursor: pointer;
-    margin-right: 161px;
+    margin-right: 180px;
 }
 .login .nav-tabs{
     margin-top: 3%;
@@ -97,10 +97,34 @@
 .form-group{
     margin-bottom: 16px;
     width: 50%;
-    margin-left: 200px;
-    
-    
+    margin-left: 183px;
 }
 .maxl span{
     margin-right: 10px;
+}
+.msgBlock{
+    margin-bottom: 8px;
+    text-align: center;
+}
+.msgBlock .errorMsg{
+    display:inline-block;
+    margin: auto;
+    width:50%;
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color:rgb(247, 243, 245);
+    color:red;
+    text-align: center;
+    word-wrap: break-word;
+}
+.msgBlock .successMsg{
+    display:inline-block;
+    margin: auto;
+    width:50%;
+    border: 2px solid green;
+    border-radius: 4px;
+    background-color:rgb(247, 243, 245);
+    color:green;
+    text-align: center;
+    word-wrap: break-word;
 }
