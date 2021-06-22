@@ -39,7 +39,7 @@ export class UserLoginComponent implements OnInit {
           this.showSuccessMsg = true;
           this.showMessage = JSON.parse(data).message;
           console.log('data',data);
-          this._router.navigateByUrl('/home');
+          this._router.navigateByUrl('/home',{state: {data: data}});
         },
         error => {
           this.showErrorMsg = true;
