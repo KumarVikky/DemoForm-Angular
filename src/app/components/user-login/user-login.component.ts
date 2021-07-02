@@ -9,7 +9,7 @@ import { UserDataService } from 'src/app/service/user-data.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  
+
   user : User = new User();
   showErrorMsg : Boolean = false;
   showSuccessMsg : Boolean = false;
@@ -31,7 +31,7 @@ export class UserLoginComponent implements OnInit {
     if(validateResponse.hasError){
       this.showErrorMsg = true;
       this.showSuccessMsg = false;
-      this.showMessage = validateResponse.message;
+      this.showMessage = validateResponse.error.message;
     }else{
       this._service.fetchUser(userJson).subscribe(
         data => {
