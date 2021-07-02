@@ -31,7 +31,7 @@ export class UserLoginComponent implements OnInit {
     if(validateResponse.hasError){
       this.showErrorMsg = true;
       this.showSuccessMsg = false;
-      this.showMessage = validateResponse.error.message;
+      this.showMessage = validateResponse.message;
     }else{
       this._service.fetchUser(userJson).subscribe(
         data => {
@@ -44,7 +44,7 @@ export class UserLoginComponent implements OnInit {
         error => {
           this.showErrorMsg = true;
           this.showSuccessMsg = false;
-          this.showMessage = error.message;
+          this.showMessage = JSON.parse(error.error).message;
           console.log('error',error);
         }
       );
